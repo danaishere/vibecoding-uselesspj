@@ -46,67 +46,56 @@ const quizData = [
 const personalityDrinks = {
     0: {
         name: "Cucumber Mint Cooler",
-        emoji: "🥒",
         description: "Fresh, light, and incredibly refreshing - a hydrating blend of cucumber, lime, and mint with a hint of agave.",
         personality: "You're calm, introspective, and appreciate the simple pleasures in life. Your zen-like approach brings peace to any room."
     },
     1: {
         name: "Mojito",
-        emoji: "🍃",
         description: "The classic balance of minty freshness with a subtle kick. Light, accessible, and timeless.",
         personality: "You're steady and reliable, with a touch of charm. You value tradition but aren't afraid of a little spontaneity."
     },
     2: {
         name: "Margarita",
-        emoji: "🍋",
         description: "Zesty and sophisticated, with perfect balance of sweet, sour, and strong. A crowd favorite!",
         personality: "You're practical yet fun, balancing work and play seamlessly. People appreciate your friendly energy."
     },
     3: {
         name: "Strawberry Daiquiri",
-        emoji: "🍓",
         description: "Sweet, fruity, and vibrant - a fun twist on a classic with fresh strawberries and rum.",
         personality: "You're naturally charming and bring color to every gathering. Your optimistic outlook is contagious!"
     },
     4: {
         name: "Pina Colada",
-        emoji: "🥥",
         description: "Tropical, creamy, and indulgent - tastes like a vacation in a glass.",
         personality: "You're adventurous and love to escape the mundane. Your free spirit and warmth make you unforgettable."
     },
     5: {
         name: "Long Island Iced Tea",
-        emoji: "🌊",
         description: "Bold, complex, and powerful - a mix of five spirits that packs a serious punch.",
         personality: "You're ambitious and bold, with a larger-than-life personality. You tackle challenges head-on with confidence."
     },
     6: {
         name: "Espresso Martini",
-        emoji: "☕",
         description: "Sophisticated and energizing - coffee meets elegance with vodka, kahlúa, and a shake to perfection.",
         personality: "You're sharp, ambitious, and always buzzing with ideas. Your dynamic energy is unstoppable."
     },
     7: {
         name: "Cosmopolitan",
-        emoji: "💎",
         description: "Chic, elegant, and refined - cranberry, vodka, and citrus create pure sophistication.",
         personality: "You're stylish and classy with impeccable taste. You know how to make an entrance and always look fabulous."
     },
     8: {
         name: "Whiskey Smash",
-        emoji: "🥃",
         description: "Strong, smoky, and intense - rye whiskey mixed with fresh lemon and a splash of thyme.",
         personality: "You're bold and fearless, with a strong personality. You don't follow trends; you set them."
     },
     9: {
         name: "Flaming Dragon",
-        emoji: "🐉",
         description: "Fiery and explosive - a daring mix of 151 rum, spiced rum, and tropical pineapple juice with a flaming presentation.",
         personality: "You're wild, passionate, and absolutely unforgettable. Your energy is explosive and contagious!"
     },
     10: {
         name: "The Apocalypse",
-        emoji: "🔥",
         description: "Extreme, intense, and not for the faint-hearted - maximum chaos in a glass with absinth and multiple spirits.",
         personality: "You're the ultimate wild card! Your extraordinary boldness and unmatched intensity make you legendary!"
     }
@@ -221,9 +210,9 @@ function updateButtons() {
     
     // Update next button text
     if (currentQuestion === quizData.length) {
-        nextBtn.textContent = 'Get My Cocktail! 🍹';
+        nextBtn.textContent = 'Get My Cocktail!';
     } else {
-        nextBtn.textContent = 'Next →';
+        nextBtn.textContent = 'Next';
     }
 }
 
@@ -247,16 +236,15 @@ function displayResult() {
     const resultContainer = document.getElementById('resultContainer');
     const buttonContainer = document.getElementById('buttonContainer');
     
-    // Hide quiz, show result
-    quizContainer.innerHTML = '';
-    buttonContainer.innerHTML = '';
+    // Hide quiz and buttons, show result
+    quizContainer.style.display = 'none';
+    buttonContainer.style.display = 'none';
     
     // Get drink data
     const drink = personalityDrinks[score];
     
     // Populate result
     document.getElementById('drinkName').textContent = drink.name;
-    document.getElementById('drinkEmoji').textContent = drink.emoji;
     document.getElementById('drinkDescription').textContent = drink.description;
     document.getElementById('personalityText').textContent = `"${drink.personality}"`;
     
@@ -266,6 +254,8 @@ function displayResult() {
 // Restart Quiz
 function restartQuiz() {
     document.getElementById('resultContainer').classList.add('hidden');
+    document.getElementById('quizContainer').style.display = 'block';
+    document.getElementById('buttonContainer').style.display = 'flex';
     
     // Recreate button container
     const buttonContainer = document.getElementById('buttonContainer');

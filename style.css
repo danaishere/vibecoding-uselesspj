@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF6B35 0%, #FDB833 50%, #FF69B4 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,9 +15,9 @@ body {
 }
 
 .container {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
     max-width: 600px;
     width: 100%;
     padding: 40px;
@@ -41,14 +41,16 @@ body {
 }
 
 .quiz-header h1 {
-    color: #667eea;
+    color: white;
     font-size: 28px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .quiz-header p {
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Progress Bar */
@@ -58,7 +60,7 @@ body {
 
 .progress-bar {
     height: 8px;
-    background: #e0e0e0;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 10px;
@@ -66,20 +68,19 @@ body {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: rgba(255, 255, 255, 0.8);
     width: 20%;
     transition: width 0.3s ease;
 }
 
 .progress-text {
     text-align: right;
-    color: #999;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
 
 /* Quiz Container */
 .quiz-container {
-    min-height: 250px;
     margin-bottom: 30px;
 }
 
@@ -101,10 +102,11 @@ body {
 }
 
 .question-title {
-    color: #333;
+    color: white;
     font-size: 20px;
     margin-bottom: 24px;
     font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .options {
@@ -114,8 +116,8 @@ body {
 }
 
 .option {
-    background: #f5f5f5;
-    border: 2px solid #ddd;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     padding: 16px;
     cursor: pointer;
@@ -123,17 +125,18 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    backdrop-filter: blur(10px);
 }
 
 .option:hover {
-    background: #efefef;
-    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .option input[type="radio"] {
     margin: 0;
     cursor: pointer;
-    accent-color: #667eea;
+    accent-color: white;
     width: 20px;
     height: 20px;
 }
@@ -141,13 +144,13 @@ body {
 .option label {
     cursor: pointer;
     flex: 1;
-    color: #333;
+    color: white;
     font-size: 16px;
 }
 
 .option.selected {
-    background: #e8eaf6;
-    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
 }
 
 /* Result Container */
@@ -164,23 +167,26 @@ body {
 }
 
 .result-content h2 {
-    color: #667eea;
+    color: white;
     font-size: 24px;
     margin-bottom: 24px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .drink-result {
-    background: linear-gradient(135deg, #667eea15, #764ba215);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 30px;
-    border: 2px solid #667eea40;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .drink-result h3 {
-    color: #764ba2;
+    color: white;
     font-size: 32px;
     margin-bottom: 12px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .emoji {
@@ -189,14 +195,14 @@ body {
 }
 
 .drink-result p {
-    color: #666;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 16px;
     line-height: 1.6;
     margin: 10px 0;
 }
 
 .personality-text {
-    color: #667eea;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
     font-style: italic;
 }
@@ -220,13 +226,15 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: #FF6B35;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: white;
 }
 
 .btn-primary:active {
@@ -234,14 +242,14 @@ body {
 }
 
 .btn-secondary {
-    background: #f0f0f0;
-    color: #333;
-    border: 2px solid #ddd;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
-    background: #e8e8e8;
-    border-color: #bbb;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
 }
 
 .btn:disabled {
