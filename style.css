@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #6B1A0F 0%, #6B490A 50%, #6B0E43 100%);
+    background: linear-gradient(135deg, #A32817 0%, #9F7012 50%, #9F1B5E 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -32,6 +32,34 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+    }
+    25% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 15px rgba(255, 200, 100, 0.6));
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 25px rgba(255, 150, 50, 0.8));
+    }
+    75% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 15px rgba(255, 200, 100, 0.6));
     }
 }
 
@@ -166,11 +194,20 @@ body {
     text-align: center;
 }
 
-.result-content h2 {
+.drink-title-top {
     color: white;
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: 36px;
+    margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.intro-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .drink-result {
@@ -181,15 +218,28 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     overflow: hidden;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    animation: slideIn 0.7s ease-out 0.3s both;
 }
 
 .drink-image {
-    width: 100%;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 12px;
     display: block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.drink-image:hover {
+    transform: scale(1.05);
+}
+
+.drink-info {
+    flex: 1;
 }
 
 .drink-result h3 {
@@ -202,6 +252,11 @@ body {
 .emoji {
     font-size: 60px;
     margin: 15px 0;
+}
+
+.drink-info {
+    flex: 1;
+    text-align: left;
 }
 
 .drink-result p {
@@ -287,11 +342,19 @@ body {
         font-size: 14px;
     }
 
-    .drink-result h3 {
-        font-size: 28px;
+    .drink-result {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 
-    .emoji {
-        font-size: 50px;
+    .drink-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .drink-result h3 {
+        font-size: 28px;
     }
 }

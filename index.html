@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <!-- Quiz Header -->
-        <div class="quiz-header">
+        <div class="quiz-header" id="quizHeader">
             <h1>What's Your Personality Cocktail?</h1>
             <p>Answer 5 quick questions to discover your perfect drink!</p>
         </div>
@@ -17,7 +17,7 @@
         <!-- Quiz Content -->
         <div class="quiz-content">
             <!-- Progress Bar -->
-            <div class="progress-container">
+            <div class="progress-container" id="progressContainer">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
@@ -32,12 +32,14 @@
             <!-- Result Container (hidden initially) -->
             <div id="resultContainer" class="result-container hidden">
                 <div class="result-content">
-                    <h2>Your Personality Cocktail:</h2>
+                    <p class="intro-text">You're definitely a</p>
+                    <h2 id="drinkTitleTop" class="drink-title-top"></h2>
                     <div class="drink-result">
                         <img id="drinkImage" class="drink-image" alt="Cocktail image">
-                        <h3 id="drinkName"></h3>
-                        <p id="drinkDescription"></p>
-                        <p class="personality-text" id="personalityText"></p>
+                        <div class="drink-info">
+                            <p id="drinkDescription"></p>
+                            <p class="personality-text" id="personalityText"></p>
+                        </div>
                     </div>
                     <button id="restartBtn" class="btn btn-primary">Take Quiz Again</button>
                 </div>
