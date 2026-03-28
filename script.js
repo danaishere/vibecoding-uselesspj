@@ -46,56 +46,67 @@ const quizData = [
 const personalityDrinks = {
     0: {
         name: "Cucumber Mint Cooler",
+        image: "https://images.unsplash.com/photo-1536628749-99a48ad67fa0?w=400&q=80",
         description: "Fresh, light, and incredibly refreshing - a hydrating blend of cucumber, lime, and mint with a hint of agave.",
         personality: "You're calm, introspective, and appreciate the simple pleasures in life. Your zen-like approach brings peace to any room."
     },
     1: {
         name: "Mojito",
+        image: "https://images.unsplash.com/photo-1569302412814-68c7f7a9a51a?w=400&q=80",
         description: "The classic balance of minty freshness with a subtle kick. Light, accessible, and timeless.",
         personality: "You're steady and reliable, with a touch of charm. You value tradition but aren't afraid of a little spontaneity."
     },
     2: {
         name: "Margarita",
+        image: "https://images.unsplash.com/photo-1571695657519-59a41802fc1d?w=400&q=80",
         description: "Zesty and sophisticated, with perfect balance of sweet, sour, and strong. A crowd favorite!",
         personality: "You're practical yet fun, balancing work and play seamlessly. People appreciate your friendly energy."
     },
     3: {
         name: "Strawberry Daiquiri",
+        image: "https://images.unsplash.com/photo-1608687057248-d5d5eae3fa5a?w=400&q=80",
         description: "Sweet, fruity, and vibrant - a fun twist on a classic with fresh strawberries and rum.",
         personality: "You're naturally charming and bring color to every gathering. Your optimistic outlook is contagious!"
     },
     4: {
         name: "Pina Colada",
+        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
         description: "Tropical, creamy, and indulgent - tastes like a vacation in a glass.",
         personality: "You're adventurous and love to escape the mundane. Your free spirit and warmth make you unforgettable."
     },
     5: {
         name: "Long Island Iced Tea",
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80",
         description: "Bold, complex, and powerful - a mix of five spirits that packs a serious punch.",
         personality: "You're ambitious and bold, with a larger-than-life personality. You tackle challenges head-on with confidence."
     },
     6: {
         name: "Espresso Martini",
+        image: "https://images.unsplash.com/photo-1608693332630-5f8e1a0f8e7a?w=400&q=80",
         description: "Sophisticated and energizing - coffee meets elegance with vodka, kahlúa, and a shake to perfection.",
         personality: "You're sharp, ambitious, and always buzzing with ideas. Your dynamic energy is unstoppable."
     },
     7: {
         name: "Cosmopolitan",
+        image: "https://images.unsplash.com/photo-1601584942147-ba3ba2c870d8?w=400&q=80",
         description: "Chic, elegant, and refined - cranberry, vodka, and citrus create pure sophistication.",
         personality: "You're stylish and classy with impeccable taste. You know how to make an entrance and always look fabulous."
     },
     8: {
         name: "Whiskey Smash",
+        image: "https://images.unsplash.com/photo-1541632511259-71acc5f3135e?w=400&q=80",
         description: "Strong, smoky, and intense - rye whiskey mixed with fresh lemon and a splash of thyme.",
         personality: "You're bold and fearless, with a strong personality. You don't follow trends; you set them."
     },
     9: {
         name: "Flaming Dragon",
+        image: "https://images.unsplash.com/photo-1608270861620-7891c7c2c91d?w=400&q=80",
         description: "Fiery and explosive - a daring mix of 151 rum, spiced rum, and tropical pineapple juice with a flaming presentation.",
         personality: "You're wild, passionate, and absolutely unforgettable. Your energy is explosive and contagious!"
     },
     10: {
         name: "The Apocalypse",
+        image: "https://images.unsplash.com/photo-1608270861620-7891c7c2c91d?w=400&q=80",
         description: "Extreme, intense, and not for the faint-hearted - maximum chaos in a glass with absinth and multiple spirits.",
         personality: "You're the ultimate wild card! Your extraordinary boldness and unmatched intensity make you legendary!"
     }
@@ -244,6 +255,8 @@ function displayResult() {
     const drink = personalityDrinks[score];
     
     // Populate result
+    document.getElementById('drinkImage').src = drink.image;
+    document.getElementById('drinkImage').alt = drink.name;
     document.getElementById('drinkName').textContent = drink.name;
     document.getElementById('drinkDescription').textContent = drink.description;
     document.getElementById('personalityText').textContent = `"${drink.personality}"`;
